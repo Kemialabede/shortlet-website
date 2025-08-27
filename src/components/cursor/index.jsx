@@ -1,26 +1,41 @@
 import React, { useEffect, useState } from "react";
 
 const Cursor = () => {
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const [pointer, setPointer] = useState({ x: 0, y: 0 });
   const [trail, setTrail] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMove = (e) => setMouse({ x: e.clientX, y: e.clientY });
+    const handleMove = (e) => {
+      setPointer({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleTouchMove = (e) => {
+      const touch = e.touches[0];
+      if (touch) {
+        setPointer({ x: touch.clientX, y: touch.clientY });
+      }
+    };
+
     document.addEventListener("mousemove", handleMove);
-    return () => document.removeEventListener("mousemove", handleMove);
+    document.addEventListener("touchmove", handleTouchMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMove);
+      document.removeEventListener("touchmove", handleTouchMove);
+    };
   }, []);
 
   // Smooth trailing effect
   useEffect(() => {
     const animate = () => {
       setTrail((prev) => ({
-        x: prev.x + (mouse.x - prev.x) * 0.2,
-        y: prev.y + (mouse.y - prev.y) * 0.2,
+        x: prev.x + (pointer.x - prev.x) * 0.2,
+        y: prev.y + (pointer.y - prev.y) * 0.2,
       }));
       requestAnimationFrame(animate);
     };
     animate();
-  }, [mouse]);
+  }, [pointer]);
 
   return (
     <>
@@ -33,7 +48,8 @@ const Cursor = () => {
           transform: "translate(-50%, -50%)",
           width: "50px",
           height: "50px",
-          boxShadow: "0 0 20px rgba(231,111,81,0.4), 0 0 40px rgba(231,111,81,0.2)",
+          boxShadow:
+            "0 0 20px rgba(231,111,81,0.4), 0 0 40px rgba(231,111,81,0.2)",
         }}
       />
 
