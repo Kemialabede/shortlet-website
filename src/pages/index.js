@@ -30,7 +30,7 @@ export default function Home() {
     <span className="text-white text-lg mb-2 uppercase tracking-wider opacity-80 font-medium">Stay in Style</span>
     <a
       href="#booking"
-      className="bg-[#E76F51] text-white px-8 py-4 rounded-full font-semibold shadow-xl hover:scale-105 transition transform flex items-center gap-2"
+      className="bg-[#E76F51] text-white px-8 py-4 rounded-full font-semibold shadow-xl flex items-center gap-2"
     >
       Book Your Stay <span className="text-xl">🛎️</span>
     </a>
