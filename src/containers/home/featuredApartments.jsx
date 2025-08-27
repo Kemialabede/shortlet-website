@@ -1,7 +1,6 @@
-import React from 'react'
-import HomeImage from '@/assets/icons/interior-design.jpg'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
+import React, { useState } from "react";
+import HomeImage from "@/assets/icons/interior-design.jpg";
+import Image from "next/image";
 
 const apartments = [
   {
@@ -24,20 +23,9 @@ const apartments = [
   },
 ];
 
-const cardVariant = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.2, // stagger each card
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  }),
-};
-
 const FeaturedApartments = () => {
+  const [activeIdx, setActiveIdx] = useState(null);
+
   return (
     <section className="bg-[#FAF9F6] py-24">
       <div className="container mx-auto px-6 lg:px-20">
@@ -51,12 +39,8 @@ const FeaturedApartments = () => {
           {apartments.map((apt, idx) => (
             <div
               key={idx}
-              className="relative overflow-hidden rounded-xl shadow-lg group"
-              custom={idx}
-            //   initial="hidden"
-            //   whileInView="visible"
-            //   viewport={{ once: false, amount: 0.3 }}
-            //   variants={cardVariant}
+              className="relative overflow-hidden rounded-xl shadow-lg transition-transform duration-500 cursor-pointer group"
+              onClick={() => setActiveIdx(idx === activeIdx ? null : idx)}
             >
               <Image
                 src={HomeImage}
@@ -65,7 +49,11 @@ const FeaturedApartments = () => {
               />
 
               {/* Overlay info */}
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <div
+                className={`absolute inset-0 bg-black/30 flex flex-col justify-end p-6 transition-opacity duration-300
+                  ${activeIdx === idx ? "opacity-100" : "opacity-0"} 
+                  group-hover:opacity-100`}
+              >
                 <h3 className="text-white text-xl font-semibold">{apt.title}</h3>
                 <p className="text-white text-sm">{apt.location}</p>
                 <p className="text-white font-bold mt-2">{apt.price}</p>
@@ -81,7 +69,7 @@ const FeaturedApartments = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default FeaturedApartments
+export default FeaturedApartments;
