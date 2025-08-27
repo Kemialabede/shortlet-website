@@ -49,14 +49,14 @@ const FeaturedApartments = () => {
         {/* Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {apartments.map((apt, idx) => (
-            <motion.div
+            <div
               key={idx}
               className="relative overflow-hidden rounded-xl shadow-lg group"
               custom={idx}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
-              variants={cardVariant}
+            //   initial="hidden"
+            //   whileInView="visible"
+            //   viewport={{ once: false, amount: 0.3 }}
+            //   variants={cardVariant}
             >
               <Image
                 src={HomeImage}
@@ -76,7 +76,7 @@ const FeaturedApartments = () => {
                   Book Now
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -40,23 +40,23 @@ export default function Home() {
         {/* About Us */}
         <section className="bg-[#FAF9F6] py-24">
           <div className="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-12">
-            <motion.div
+            <div
               className="lg:w-1/2 relative rounded-xl overflow-hidden shadow-lg"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false}}
-              transition={{ duration: 0.8 }}
+              // initial={{ opacity: 0, x: -50 }}
+              // whileInView={{ opacity: 1, x: 0 }}
+              // viewport={{ once: false}}
+              // transition={{ duration: 0.8 }}
             >
               <Image src={HomeImage} alt="Luxury apartment interior" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/20"></div>
-            </motion.div>
+            </div>
 
-            <motion.div
+            <div
               className="lg:w-1/2 space-y-6"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.8 }}
+              // initial={{ opacity: 0, x: 50 }}
+              // whileInView={{ opacity: 1, x: 0 }}
+              // viewport={{ once: false }}
+              // transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl font-heading text-[#2E2E2E]">About Us</h2>
               <p className="text-gray-700 text-lg leading-relaxed">
@@ -65,7 +65,7 @@ export default function Home() {
               <a href="/apartments" className="inline-block mt-4 bg-[#E76F51] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#D45B3F] transition">
                 Explore Our Apartments
               </a>
-            </motion.div>
+            </div>
           </div>
         </section>
 
