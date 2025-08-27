@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }) {
   return (
     <Layout>
       {loading ? <PageLoader /> : null}
-      <Cursor />
+      {/* <Cursor /> */}
       {!loading && <Component {...pageProps} />}
     </Layout>
   );
