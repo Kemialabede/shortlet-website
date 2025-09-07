@@ -14,11 +14,10 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="hidden md:flex gap-6 uppercase font-bold text-sm">
-          <a href="#home" className="hover:text-[#E76F51] transition">Home</a>
-          <a href="#about" className="hover:text-[#E76F51] transition">About Us</a>
-          <a href="#services" className="hover:text-[#E76F51] transition">Our Services</a>
-          <a href="#projects" className="hover:text-[#E76F51] transition">Projects</a>
-          <a href="#contact" className="hover:text-[#E76F51] transition">Contact Us</a>
+          <a href="/" className="hover:text-[#E76F51] transition">Home</a>
+          <a href="/about" className="hover:text-[#E76F51] transition">About Us</a>
+          <a href="/listings" className="hover:text-[#E76F51] transition">Apartments</a>
+          <a href="/contact" className="hover:text-[#E76F51] transition">Contact Us</a>
         </nav>
 
         {/* Contact */}
