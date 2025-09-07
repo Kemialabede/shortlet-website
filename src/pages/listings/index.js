@@ -4,6 +4,7 @@ import Image from "next/image";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css"; // default styles
 import HomeImage from "@/assets/icons/interior-design.jpg";
+import Link from "next/link";
 
 
 const apartments = [
@@ -107,9 +108,9 @@ const ApartmentListing = () => {
                     >
                       {apt.category.charAt(0).toUpperCase() + apt.category.slice(1)}
                     </span>
-                    <a href="/listings/details" className="text-sm font-medium text-[#E76F51] hover:underline">
+                    <Link href="/listings/details" className="text-sm font-medium text-[#E76F51] hover:underline">
                       View Details →
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

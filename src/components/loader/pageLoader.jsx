@@ -14,7 +14,7 @@ const PageLoader = () => {
       {loading && (
         <motion.div
           key="loader"
-          className="fixed top-0 left-0 w-full h-full z-[9999] flex items-center justify-center bg-gradient-to-br from-[#F1E1C6] to-[#FAF9F6]"
+          className="fixed top-0 left-0 w-full h-[100vh] z-[9999] flex items-center justify-center bg-gradient-to-br from-[#F1E1C6] to-[#FAF9F6]"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.5 } }}
         >

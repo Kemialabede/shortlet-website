@@ -6,6 +6,7 @@ import KeyFeatures from "@/containers/home/keyFeatures";
 import Testimonial from "@/containers/home/testimonial";
 import BookingSection from "@/containers/home/bookingSection";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -62,9 +63,9 @@ export default function Home() {
               <p className="text-gray-700 text-lg leading-relaxed">
                 At <span className="font-semibold">[Your Brand Name]</span>, we believe every stay should feel like home. Our service apartments are designed with comfort and modern aesthetics.
               </p>
-              <a href="/apartments" className="inline-block mt-4 bg-[#E76F51] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#D45B3F] transition">
+              <Link href="/listings" className="inline-block mt-4 bg-[#E76F51] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#D45B3F] transition">
                 Explore Our Apartments
-              </a>
+              </Link>
             </div>
           </div>
         </section>
